@@ -1,0 +1,74 @@
+{% extends 'TestApp/base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+<style>
+    .container{
+      
+      font-family: fantasy;
+    }
+    body {
+  background-color: rgb(211, 211, 211);
+}
+</style>
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Blogs Page</title>
+{% endblock title %}
+
+
+
+{% block body %}
+
+
+<br>
+
+<div class="container shadow pb-3">
+    <h1 class="display-5 text-center text-primary p-3">All Project</h1>
+</div>
+
+<br>
+<hr>
+<br>
+<div class="container2 ">
+    <div class="row">
+        {% for pro in prj %}
+        <div class="card" style="width: 18rem; box-shadow:20px;">
+            
+
+            <div class="card-body">
+                <h5 class="card-title">{{pro.title}}</h5>
+                <p class="card-text"></p>
+                <div class="collapse mb-3" id="collapseWidthExample2">
+                    {{pro.desc}}
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample2" aria-expanded="false"
+                        aria-controls="collapseWidthExample">Read more</button>
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+        <br>
+        {% endfor %}
+        
+    </div>
+</div>
+<br>
+<br>
+<hr>
+<div class="container3 d-grid gap-2">
+    <a class="btn btn-primary" href="{% url 'add_pro' %}"> Add More project</a>
+</div>
+
+
+{% endblock body %}

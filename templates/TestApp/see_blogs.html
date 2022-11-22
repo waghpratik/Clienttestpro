@@ -1,0 +1,73 @@
+{% extends 'TestApp/base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+<style>
+    .container{
+      
+      font-family: fantasy;
+    }
+    body {
+  background-color:rgb(211, 211, 211);
+}
+</style>
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Blogs Page</title>
+{% endblock title %}
+
+
+
+{% block body %}
+
+<div class="container shadow pb-3">
+    <h1 class="display-5 text-center text-primary p-3">Remove blogs</h1>
+
+</div>
+
+<div class="container2 ">
+    <section class="mt-5 pt-5">
+        <div class="container">
+           
+            <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">I  D</th>
+                <th scope="col">P  R  O  J  E  C  T       T  I  T  L  E</th>
+                
+                <th scope="col">A  C  T  I  O  N</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for blog in prj1 %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{blog.title}}</td>
+                <td>
+                    
+                <a href="#" class="btn btn-danger">Delete</a>
+                <a href="#" class="btn btn-danger">update</a>
+                </td>
+                
+                
+              </tr>
+              {% endfor %}
+             
+    
+              </tbody>
+              </table>
+              
+        </div>
+    </section>
+    
+</div>
+
+
+
+{% endblock body %}
